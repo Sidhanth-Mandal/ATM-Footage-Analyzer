@@ -1,0 +1,105 @@
+app:
+  version: "0.1.0"
+  data_dir: data
+  models_dir: models
+  host: 127.0.0.1
+  port: 8000
+  cors_origins: ["http://127.0.0.1:5173", "http://localhost:5173"]
+  token_hours: 8
+
+models:
+  person_pose: yolo26s-pose.pt
+  open_vocab: yoloe-26s-seg.pt
+  face_detector: scrfd_10g
+  recognizer: adaface_ir101
+  fiqa: ediffiqa_m
+  head_pose: headpose_resnet18
+  parser: parsing_resnet18
+  attrib: face_attrib_net
+  gfpgan: gfpgan_1.4.onnx
+  half: true
+  require_gpu: true
+
+ingest:
+  max_upload_gb: 8
+  raw_fps: 25
+  proxy_max_height: 720
+  normalise_crf: 18
+  ffprobe_timeout_s: 30
+  ffmpeg_timeout_s: 3600
+
+timemap:
+  ocr_every_s: 2.0
+  ransac_tol_s: 1.5
+  min_inliers: 5
+  min_inlier_ratio: 0.6
+  ransac_iters: 200
+
+det:
+  dark_mean: 0.30
+  backlight_spread: 0.45
+  gamma: 0.6
+
+coarse:
+  sample_fps: 5
+  person_conf: 0.30
+  lost_s: 5
+  min_track_s: 1.0
+  merge_gap_s: 2.0
+  imgsz: 640
+  face_track_conf: 0.45
+
+linking:
+  window_before_s: 90
+  window_after_s: 30
+  near_h_frac: 0.45
+  near_iod_px: 30
+  near_area_ref: 0.25
+  tau_s: 30
+  top_k: 5
+  tie_eps: 0.05
+  weights:
+    fascia: {overlap: 0.30, dwell: 0.40, proximity: 0.15, closeness: 0.15}
+    lobby:  {overlap: 0.30, dwell: 0.25, hand: 0.25, proximity: 0.10, closeness: 0.10}
+
+dense:
+  pad_s: 2.0
+  upper_body_frac: 0.45
+  margin: 0.15
+  face_conf: 0.45
+  max_anchor_dist: 0.35
+  batch: 32
+  hold_s: 0.4
+
+quality:
+  weights: {fiqa: 0.30, sharpness: 0.15, pose: 0.15, illumination: 0.10, occlusion: 0.15, resolution: 0.15}
+  fiqa_bounds: [null, null]        # set by calibrate.py; defaults applied in code when null
+  iod_min_px: 15
+  grade_a: 75
+  grade_b: 55
+
+flags:
+  yoloe_conf: 0.35
+  yoloe_top_n: 30
+  extreme_yaw: 45
+  extreme_pitch: 30
+  low_res_iod: 25
+  use_yoloe: true
+
+select:
+  top_k: 6
+  min_gap_s: 0.5
+
+search:
+  gallery_frame_step: 2
+  faces_per_track: 5
+  min_visible_frac: 0.5
+  bands: {strong: null, possible: null, weak: null}   # set by calibrate.py; defaults applied in code when null
+
+behaviour:
+  ss_min_s: 2.0
+  tamper_ref_n: 50
+  tamper_ssim: 0.80
+  tamper_persist_s: 30
+  tamper_loiter_s: 90
+  sample_fps: 2

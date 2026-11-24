@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "atmcctv"
+version = "0.1.0"
+description = "PS04: ATM CCTV suspect face extraction (local, offline, human-in-the-loop)"
+requires-python = ">=3.12"
+dependencies = [
+  "torch",
+  "torchvision",
+  "ultralytics",
+  "uniface[gpu]",
+  "av",
+  "opencv-python",
+  "numpy",
+  "faiss-cpu",
+  "fastapi",
+  "uvicorn[standard]",
+  "sqlmodel",
+  "python-multipart",
+  "pyjwt",
+  "argon2-cffi",
+  "pydantic-settings",
+  "pyyaml",
+  "reportlab",
+  "pillow",
+  "httpx",
+  "rapidocr",
+  "scikit-image",
+  "lap>=0.5.12",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+atmcctv = "atmcctv.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

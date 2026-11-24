@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/
+samples/
+models/
+*.egg-info/
+frontend/node_modules/
+frontend/dist/
+.env
+
+# docs are kept local for now
+docs/
+feature.md
+
+# build artefacts
+*.tsbuildinfo

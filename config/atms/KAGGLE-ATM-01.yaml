@@ -1,0 +1,12 @@
+# File-based ATM setup (synced into the database at API start-up or with `atmcctv atms-sync`).
+# ROIs are polygons in normalised coordinates (0..1) so they apply to the original and the proxy.
+# The Kaggle "ATM Video" clips come from a phone at fascia height looking out of the booth,
+# so there is no visible keypad/card slot: camera_type fascia, no ROIs needed.
+atm_code: KAGGLE-ATM-01
+location: "Kaggle ATM Video dataset (CC0), booth camera at fascia height"
+camera_type: fascia
+rois: {}
+ocr_roi: null
+date_order: DMY
+tz: Asia/Dhaka
+metadata_is_end: false
