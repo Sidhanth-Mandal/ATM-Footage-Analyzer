@@ -1,0 +1,51 @@
+{
+ "fps": 25.0,
+ "normalised": true,
+ "candidates": [
+  1
+ ],
+ "faces": [
+  {
+   "pts": 1.15,
+   "grade": "C",
+   "total": 31.94,
+   "flags": [
+    "BACKLIT",
+    "CAP_HAT",
+    "MASK"
+   ]
+  },
+  {
+   "pts": 2.3666666666666667,
+   "grade": "C",
+   "total": 29.45,
+   "flags": [
+    "BACKLIT",
+    "MASK",
+    "PARTIAL_FACE"
+   ]
+  },
+  {
+   "pts": 0.5,
+   "grade": "C",
+   "total": 24.02,
+   "flags": [
+    "BACKLIT",
+    "LOW_RES",
+    "MASK",
+    "MOTION_BLUR"
+   ]
+  },
+  {
+   "pts": 0.0,
+   "grade": "C",
+   "total": 9.61,
+   "flags": [
+    "EXTREME_POSE",
+    "LOW_RES",
+    "MASK",
+    "MOTION_BLUR"
+   ]
+  }
+ ]
+}

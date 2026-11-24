@@ -1,0 +1,29 @@
+{
+ "fps": 30.0,
+ "normalised": false,
+ "candidates": [
+  1
+ ],
+ "faces": [
+  {
+   "pts": 1.0333333333333332,
+   "grade": "C",
+   "total": 28.38,
+   "flags": [
+    "BACKLIT",
+    "CAP_HAT",
+    "MASK"
+   ]
+  },
+  {
+   "pts": 0.03333333333333333,
+   "grade": "C",
+   "total": 23.33,
+   "flags": [
+    "LOW_RES",
+    "MASK",
+    "MOTION_BLUR"
+   ]
+  }
+ ]
+}

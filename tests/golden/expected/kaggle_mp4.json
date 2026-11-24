@@ -1,0 +1,66 @@
+{
+ "fps": 29.97002997002997,
+ "normalised": false,
+ "candidates": [
+  4,
+  5,
+  2
+ ],
+ "faces": [
+  {
+   "pts": 3.9039,
+   "grade": "C",
+   "total": 44.67,
+   "flags": [
+    "CAP_HAT",
+    "EXTREME_POSE",
+    "MASK"
+   ]
+  },
+  {
+   "pts": 6.5732333333333335,
+   "grade": "C",
+   "total": 40.8,
+   "flags": [
+    "CAP_HAT",
+    "MASK"
+   ]
+  },
+  {
+   "pts": 2.1021,
+   "grade": "C",
+   "total": 39.92,
+   "flags": [
+    "MASK"
+   ]
+  },
+  {
+   "pts": 5.438766666666667,
+   "grade": "C",
+   "total": 37.64,
+   "flags": [
+    "CAP_HAT",
+    "EXTREME_POSE",
+    "MASK"
+   ]
+  },
+  {
+   "pts": 0.8675333333333334,
+   "grade": "C",
+   "total": 36.83,
+   "flags": [
+    "MASK"
+   ]
+  },
+  {
+   "pts": 5.9726333333333335,
+   "grade": "C",
+   "total": 34.17,
+   "flags": [
+    "CAP_HAT",
+    "EXTREME_POSE",
+    "MASK"
+   ]
+  }
+ ]
+}
