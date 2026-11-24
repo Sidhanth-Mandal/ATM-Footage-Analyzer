@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/* Design tokens (light theme). Every color in the UI comes from here; Tailwind's default palette is switched off.
+   "static" emits every variable, because canvas and SVG code read some of them only through var(). */
+@theme static {
+  --color-*: initial;
+
+  /* Palette */
+  --color-bg: #f5f9fb;          /* Light Azure 15% on Paper White: page background */
+  --color-surface: #ffffff;     /* Paper White: cards, sidebar, dialogs */
+  --color-raised: #e9f1f5;      /* Light Azure 35% on Paper White: hover, selected rows, neutral badges */
+  --color-line: #dcdcdc;        /* Charcoal 16% on Paper White: borders */
+  --color-accent: #00638e;      /* Dark Azure: primary buttons, links, active states */
+  --color-accent-deep: #004a6b; /* primary hover */
+  --color-accent-mid: #8cb9cc;  /* secondary chart color */
+  --color-accent-soft: #bfd8e3; /* Light Azure: light accent fills */
+  --color-fg: #141414;          /* Onyx: text */
+  --color-muted: #5f5f5f;       /* Onyx 70%: labels, secondary text */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Status (desaturated, only for success / warning / error) */
+  --color-ok: #2e7d4f;
+  --color-warn: #8a6212;
+  --color-err: #b23b3b;
+
+  /* Overlays drawn on top of video frames (dark footage, so they stay light) */
+  --color-roi-keypad: #bfd8e3;
+  --color-roi-cash_slot: #8cb9cc;
+  --color-roi-card_slot: #ffffff;
+  --color-roi-atm_zone: #00638e;
+  --color-roi-ocr: #ffffff;
+  --color-overlay-box: #bfd8e3;
+
+  --radius-card: 16px;
+  --radius-control: 10px;
+
+  --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Cascadia Mono", Consolas, ui-monospace, monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  color-scheme: light;
+}
+
+input[type="checkbox"],
+input[type="range"] {
+  accent-color: var(--color-accent);
+}
+
+.enhanced-frame {
+  outline: 3px solid var(--color-err);
+  outline-offset: -3px;
+}
