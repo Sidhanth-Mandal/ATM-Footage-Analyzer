@@ -12,7 +12,7 @@ frontend/dist/
 
 # docs are kept local for now
 docs/
-feature.md
+presentation/
 
 # build artefacts
 *.tsbuildinfo
